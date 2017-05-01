@@ -1,18 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import {IndexLink} from 'react-router';
+import {Link} from 'react-router';
+import dotenv from 'dotenv';
+import './index.css';
+
+
+dotenv.config({silent:true});
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+        <div className="container">
+
+          <header className="navbar">
+            <h1 className="pull-left">divvy</h1>
+          </header>
+
+          <nav className="tabs">
+            <li><IndexLink to="/" activeClassName="active" className="link">Home</IndexLink></li>
+            <li><Link to="/goals" activeClassName="active" className="link">Goals</Link></li>
+            <li><Link to="/AddGoals" activeClassName="active" className="link">Add a New Goal</Link></li>
+          </nav>
+          <div className="content">
+            {this.props.children}
+          </div>
+
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }

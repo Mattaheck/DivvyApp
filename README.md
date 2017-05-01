@@ -14,3 +14,4 @@ Git Workflow
 6. Run `git merge [your_branch_name]` to merge your branch name into `dev`
 7. Fix any merge conflicts
 8. Do `git push origin dev` to push the new `dev` branch up
+

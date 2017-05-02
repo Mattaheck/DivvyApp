@@ -1,4 +1,6 @@
 import firebase from 'firebase';
+
+const config = {
    apiKey: "AIzaSyCTnLCz-EtGw0LTcpW4WcbrnaZHSPk3Q3Y",
    authDomain: "divvyapp-14866.firebaseapp.com",
    databaseURL: "https://divvyapp-14866.firebaseio.com",

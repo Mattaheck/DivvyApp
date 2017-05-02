@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700');
+
 .home {
   margin: 0;
   padding: 0;
@@ -8,8 +10,12 @@
 }
 
 .homeContent {
+  /*background-image: url('https://s-media-cache-ak0.pinimg.com/originals/a9/8a/1f/a98a1fe05019c395040c7872f7a26be4.gif');*/
+  background-image: url('http://orig09.deviantart.net/879c/f/2012/119/1/0/pixel_waterfall_bg__by_isohei-d4xntof.gif');
+  background-size: cover;
   min-height: 100vh;
   min-width: 100vw;
+  border-bottom: 1.5px solid rgb(255,255,255);
 }
 
 .lT {
@@ -20,6 +26,8 @@
   min-height: 10vh;
   min-width: 400px;
   padding-top: 5px;
+  -moz-animation:bounce .75s linear;
+  -webkit-animation:bounce .75s linear;
 }
 
 .lT1 {
@@ -30,17 +38,17 @@
 }
 
 .lT2 {
-  font-size: 4.2em;
+  font-size: 3.7em;
 }
 
 .lT3 {
   font-weight: bolder;
-  font-size: 1.7em;
+  font-size: 1.5em;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.aboutContent{
+.blueContainer{
   background-color: rgb(0,98,148);
   min-height: 100vh;
   min-width: 100vw;
@@ -86,6 +94,18 @@
   border: 1.5px solid rgb(255,145,150) !important;
 }
 
+.aT2 {
+  margin-left: 1%;
+  margin-top: 15%;
+  font-family: 'Avenir', sans-serif;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 3px 3px rgba(0,0,0,.05);
+  color: rgb(255,145,150);
+  margin-bottom: 5%;
+  letter-spacing: 2px;
+}
+
 .aBCol {
   margin-top: 8%;
   display: inline;
@@ -105,7 +125,7 @@
   color: rgb(255,145,150);
   box-shadow: 5px 5px rgba(0,0,0,.3);
   border: 2px solid rgb(255,145,150);
-  padding: 15px 4px 2px 4px;
+  padding: 50px 4px 2px 4px;
   -o-transition:.3s;
   -ms-transition:.3s;
   -moz-transition:.3s;
@@ -142,5 +162,41 @@
 }
 
 .aBLogo {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: bold;
   font-size: 5em;
+}
+
+.aboutUs {
+  margin-top: 5%;
+  margin-left: 10px;
+  font-family: 'Avenir', sans-serif;
+  font-weight: normal;
+  font-size: 1.5em;
+  line-height: 2em;
+  color: rgb(0,98,148);
+  text-align: justify;
+}
+
+.aboutContent {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+/*
+A N I M A T I O N S
+*/
+
+@-moz-keyframes bounce {
+  0%{ -moz-transform:scale(0); opacity:0;}
+  50%{ -moz-transform:scale(1.3); opacity:0.4; }
+  75%{ -moz-transform:scale(0.9); opacity:0.7;}
+  100%{ -moz-transform:scale(1); opacity:1;}
+}
+
+@-webkit-keyframes bounce {
+  0%{ -webkit-transform:scale(0); opacity:0;}
+  50%{ -webkit-transform:scale(1.3); opacity:0.4;}
+  75%{ -webkit-transform:scale(0.9); opacity:0.7;}
+  100%{ -webkit-transform:scale(1); opacity:1;}
 }

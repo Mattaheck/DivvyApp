@@ -19,7 +19,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <div className="aboutContent container">
+        <div className="blueContainer container">
           <div className="row">
             <div className="col-md-offset-1 col-md-6 aT">
               Save Your Money
@@ -59,17 +59,23 @@ class Home extends Component {
           </div>
           </div>
         </div>
-        <div className="homeContent container">
+        <div className="aboutContent container">
           <div className="row">
-            <div className="col-md-offset-2 col-md-3 col-sm-3 lT">
-              <div className="lT1">
-                <span className="lT2">
-                  Learn to Save<br/>
+            <div className="col-md-offset-1 col-md-6 col-sm-6">
+                <div className="aT2">
+                  Entertaining & Educating<br/>
+                </div>
+                <span className="aT1">
+                  about divvy
                 </span>
-                <span className="lT3">
-                  it's never been so fun!
-                </span>
-              </div>
+                <br/><br/>
+                <div className="aboutUs">
+                    <p>
+                    divvy is a platform to teach yourself money-managing skills that will help you be financially responsible.
+                    <br/><br/>
+                    This is more text to make it seem like this is a legitimate website with legitimate offerings to you, the user! Other words would go right here to really sell it to you.
+                  </p>
+                </div>
             </div>
           </div>
         </div>

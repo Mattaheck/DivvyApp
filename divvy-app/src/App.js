@@ -21,6 +21,8 @@ class App extends Component {
             <li><IndexLink to="/" activeClassName="active" className="link">Home</IndexLink></li>
             <li><Link to="/goals" activeClassName="active" className="link">Goals</Link></li>
             <li><Link to="/AddGoals" activeClassName="active" className="link">Add a New Goal</Link></li>
+            <li><Link to="/Profile" activeClassName="active" className="link">All about you</Link></li>
+
           </nav>
           <div className="content">
             {this.props.children}

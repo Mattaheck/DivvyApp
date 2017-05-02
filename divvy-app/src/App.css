@@ -32,15 +32,19 @@ a.link {
 .tabs li a:hover {
   text-decoration: none;
   color: rgb(255,145,150);
-  border: 1.5px solid rgb(255,145,150);
+  border: 1px solid rgb(255,145,150);
   box-shadow: 5px 5px rgba(0,0,0,.2);
 }
 
 .tabs li a:active {
   text-decoration: none;
   color: rgb(255,145,150);
-  border: 1.5px solid rgb(255,145,150);
+  border: 1px solid rgb(255,145,150);
   box-shadow: 1px 1px rgba(0,0,0,.3);
+}
+
+a, a:hover, a:active, a:visited, a:focus {
+  text-decoration: none;
 }
 
 h1 {
@@ -57,7 +61,7 @@ navbar-default, a.navbar-brand {
   font-size: 2em;
   letter-spacing: .2em;
   color: rgb(255,145,150) !important;
-  border-right: 1.5px solid rgb(0,98,148);
+  border-right: 1px solid rgb(0,98,148);
   -o-transition:.2s;
   -ms-transition:.2s;
   -moz-transition:.2s;
@@ -66,11 +70,12 @@ navbar-default, a.navbar-brand {
 }
 
 navbar-default, a.navbar-brand:hover {
+  background-color: rgb(255,255,255);
   box-shadow: 4px 5px rgba(0,0,0,.2);
 }
 
 .navbar {
-  border-bottom: 1.5px solid rgb(0,98,148);
+  border-bottom: 1px solid rgb(0,98,148);
   -o-transition:.2s;
   -ms-transition:.2s;
   -moz-transition:.2s;

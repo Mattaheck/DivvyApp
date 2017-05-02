@@ -1,11 +1,13 @@
 import firebase from 'firebase';
 
 const config = {
-   apiKey: "AIzaSyBQU2vhQeexjJnC2RoK6b3aAjTtLF9cF30",
-   authDomain: "savings-app-8462e.firebaseapp.com",
-   databaseURL: "https://savings-app-8462e.firebaseio.com",
-   projectId: "savings-app-8462e",
-   storageBucket: "savings-app-8462e.appspot.com",
-   messagingSenderId: "405931649641"
+   apiKey: "AIzaSyCTnLCz-EtGw0LTcpW4WcbrnaZHSPk3Q3Y",
+   authDomain: "divvyapp-14866.firebaseapp.com",
+   databaseURL: "https://divvyapp-14866.firebaseio.com",
+   projectId: "divvyapp-14866",
+   storageBucket: "divvyapp-14866.appspot.com",
+   messagingSenderId: "1043692060269"
  };
  firebase.initializeApp(config);
+
+export default firebase;

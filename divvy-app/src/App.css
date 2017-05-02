@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico');
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 a.link {
   font-size: 2em;
@@ -68,5 +71,13 @@ navbar-default, a.navbar-brand:hover {
 
 .navbar {
   border-bottom: 1.5px solid rgb(0,98,148);
-  box-shadow: 3px 3px rgba(0,0,0,.3);
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.3s;
+}
+
+.navbar:hover {
+  box-shadow: 4px 4px rgba(0,0,0,.3);
 }

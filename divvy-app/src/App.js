@@ -3,6 +3,7 @@ import {IndexLink} from 'react-router';
 import {Link} from 'react-router';
 import dotenv from 'dotenv';
 import './index.css';
+import firebase from './utils/firebase';
 
 
 dotenv.config({silent:true});

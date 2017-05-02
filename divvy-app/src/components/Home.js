@@ -27,20 +27,29 @@ class Home extends Component {
           <div className="row">
             <div className="col-md-offset-1 col-md-6">
               <div className="aT1">
-                Earn points
+                Earn stars
               </div>
             </div>
           </div>
           <div className="row aboutRow">
             <div className="col-md-offset-2 col-md-9 aBCol">
               <div className="col-md-4 aB">
-
+                CREATE A GOAL<br/>
+                <span className="aBLogo">
+                  +
+                </span>
               </div>
               <div className="col-md-4 aB">
-
+                SAVE DAILY<br/>
+                <span className="aBLogo">
+                  $
+                </span>
               </div>
               <div className="col-md-4 aB">
-
+                WIN STARS<br/>
+                <span className="aBLogo">
+                  ★
+                </span>
               </div>
             </div>
           </div>
@@ -48,6 +57,20 @@ class Home extends Component {
             {/* <div className="col-md-offset-2 col-md-4 aB2">
             </div> */}
           </div>
+          </div>
+        </div>
+        <div className="homeContent container">
+          <div className="row">
+            <div className="col-md-offset-2 col-md-3 col-sm-3 lT">
+              <div className="lT1">
+                <span className="lT2">
+                  Learn to Save<br/>
+                </span>
+                <span className="lT3">
+                  it's never been so fun!
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

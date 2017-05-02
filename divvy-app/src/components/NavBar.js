@@ -17,10 +17,11 @@ class NavBar extends Component {
           <nav className="tabs navbar navbar-default navbar-fixed-top">
             <Link className="navbar-brand" to="/">divvy</Link>
             <ul>
-              <li><IndexLink to="/" activeClassName="active" className="link">Home</IndexLink></li>
+              <li><IndexLink to="/" activeClassName="active" className="link">Our Goal</IndexLink>
+              <p>is to educate young adults and adolescents out financial sponsibility in a fun an engaging way.</p></li>
               <li><Link to="/Goals" activeClassName="active" className="link">Goals</Link></li>
               <li><Link to="/AddGoals" activeClassName="active" className="link">Add a New Goal</Link></li>
-              <li><Link to="/Profile" activeClassName="active" className="link">All about you</Link></li>
+              <li><Link to="/Profile" activeClassName="active" className="link">Profile</Link></li>
             </ul>
           </nav>
         </div>

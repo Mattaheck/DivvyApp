@@ -1,0 +1,49 @@
+.home {
+  margin: 0;
+  padding: 0;
+}
+
+.homeContent {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.lT {
+  background-color: rgb(255,255,255);
+  border: 1px solid rgb(255,145,150);
+  box-shadow: 5px 5px rgba(0,0,0,.3);
+  margin-top: 150px;
+  min-height: 10vh;
+  min-width: 20vw;
+  padding-top: 5px;
+}
+
+.lT1 {
+  font-family: 'Avenir', sans-serif;
+  font-size: 1.5em;
+  color: rgb(255,145,150);
+}
+
+.lT2 {
+  font-size: 2em;
+}
+
+.lT3 {
+  font-weight: bolder;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.aboutContent {
+  background-color: rgb(0,98,148);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.container{
+}
+
+.aT {
+  min-width: 100%;
+  border: 1px solid rgb(255,255,255);
+}

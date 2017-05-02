@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import dotenv from 'dotenv';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import './App.css';
 
 
@@ -15,6 +16,7 @@ class App extends Component {
       <div className="content">
         {this.props.children}
       </div>
+      <Footer />
     </div>
     );
   }

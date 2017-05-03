@@ -5,14 +5,12 @@ import {
   Route
 } from 'react-router';
 
-
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import './App.css';
 import { firebase, auth } from './utils/firebase';
-
 
 dotenv.config({silent:true});
 
@@ -38,7 +36,7 @@ class App extends Component {
 
   loginButtonClicked(e) {
     e.preventDefault();
-    const provider = new firebase.auth.FacebookAuthProvider();
+    const provider = new firebase.auth.GithubAuthProvider();
     auth.signInWithPopup(provider);
   }
 

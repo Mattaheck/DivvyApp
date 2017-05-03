@@ -15,12 +15,19 @@ class NavBar extends Component {
     return <LoginButton { ...this.props } className="link"> Login </LoginButton>
   }
 }
+  navState(){
+    if (this.props.currentUser){
+      return (
+        <Link to="/Profile" activeClassName="active" className="link">Profile</Link>
+      )
+    }
+  }
 
   render() {
     return (
 
       <div className="container">
-        <div className="navbar-header">
+        <div className="navbar-header navbar navbar-collapse">
           <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span className="sr-only">Toggle navigation</span>
             <span className="icon-bar"></span>
@@ -34,8 +41,8 @@ class NavBar extends Component {
               <li><IndexLink to="/" activeClassName="active" className="link">Home</IndexLink></li>
               <li><Link to="/Goals" activeClassName="active" className="link">Goals</Link></li>
               <li><Link to="/AddGoals" activeClassName="active" className="link">Add a New Goal</Link></li>
-              <li><Link to="/Profile" activeClassName="active" className="link">Profile</Link></li>
-              <div id="navbar" className="navbar-collapse collapse">
+              <li>{ this.navState() }</li>
+
                 <ul className="nav navbar-nav navbar-right">
                   <li className="dropdown">{ this.sessionState() }
                 <ul className="dropdown-menu">
@@ -43,7 +50,6 @@ class NavBar extends Component {
                 </ul>
                   </li>
                 </ul>
-              </div>
             </ul>
           </nav>
         </div>

@@ -36,39 +36,31 @@ class App extends Component {
     });
   }
 
-  loginButtonClicked(e) {
-    e.preventDefault();
-
-    const provider = new firebase.auth.FacebookAuthProvider();
-    auth.signInWithPopup(provider);
-  }
-
   handleLogin(e){
-  e.preventDefault();
+  // e.preventDefault();
   console.log('Login button clicked');
 
-  const provider = new firebase.auth.GithubAuthProvider();
-  auth.signInWithPopup(provider);
-  }
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider).then(function(result){
+    console.log('Fuck yeah');
+  }).catch(function(error){
+    console.log('Error: ', error);
+  })
+}
 
-  handleLogout(e){
-    e.preventDefault();
-    console.log('Logout button clicked');
-    auth.signOut();
-  }
+handleLogout(e){
+  e.preventDefault();
+  console.log('Logout button clicked');
+  auth.signOut();
+}
 
-  logoutButtonClicked(e) {
-    e.preventDefault();
-
-    auth.signOut();
-  }
 
   render() {
     return (
     <div className="App">
       <NavBar
       handleLogout={ this.handleLogout }
-      handleLogin={ this.handleLogout }
+      handleLogin={ this.handleLogin }
       currentUser={ this.state.currentUser }/>
       <div className="content">
         { this.props.children }

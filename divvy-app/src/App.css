@@ -14,7 +14,8 @@ a.link {
   list-style: none;
 }
 
-.tabs li a {
+.tabs li a.link {
+  text-align: center;
   border: 1.5px solid rgb(0,98,148);
   padding: 5px 5px 5px 9px;
   margin: 15px;
@@ -29,14 +30,14 @@ a.link {
   transition:.2s;
 }
 
-.tabs li a:hover {
+.tabs li a.link:hover {
   text-decoration: none;
   color: rgb(255,145,150);
   border: 1px solid rgb(255,145,150);
   box-shadow: 5px 5px rgba(0,0,0,.2);
 }
 
-.tabs li a:active {
+.tabs li a.link:active {
   text-decoration: none;
   color: rgb(255,145,150);
   border: 1px solid rgb(255,145,150);
@@ -45,10 +46,6 @@ a.link {
 
 a, a:hover, a:active, a:visited, a:focus {
   text-decoration: none;
-}
-
-a.link {
-  text-align: center;
 }
 
 h1 {

@@ -1,80 +1,39 @@
 import React, { Component } from 'react';
+import './Goals.css'
 
 class Goals extends Component {
   render(){
     return(
       <div className="home container">
-        <div className="homeContent container">
+        <div className="aboutContent container">
           <div className="row">
-            <div className="col-md-offset-2 col-md-3 col-sm-3 lT">
-              <div className="lT1">
-                <span className="lT2">
-                  Learn to Save<br/>
-                </span>
-                <span className="lT3">
-                  it's never been so fun!
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="blueContainer container">
-          <div className="row">
-            <div className="col-md-offset-1 col-md-6 aT">
-              Save Your Money
+            <div className="col-md-offset-2 col-md-6 gT">
+              Your Goals
             </div>
           <div className="row">
             <div className="col-md-offset-1 col-md-6">
-              <div className="aT1">
-                Earn stars
-              </div>
-            </div>
-          </div>
-          <div className="row aboutRow">
-            <div className="col-md-offset-2 col-md-9 aBCol">
-              <div className="col-md-4 aB">
-                CREATE A GOAL<br/>
-                <span className="aBLogo">
-                  +
-                </span>
-              </div>
-              <div className="col-md-4 aB">
-                SAVE DAILY<br/>
-                <span className="aBLogo">
-                  $
-                </span>
-              </div>
-              <div className="col-md-4 aB">
-                WIN STARS<br/>
-                <span className="aBLogo">
-                  ★
-                </span>
-              </div>
+              {/* <div className="gT1">
+                goals
+              </div> */}
             </div>
           </div>
           <div className="row">
-            {/* <div className="col-md-offset-2 col-md-4 aB2">
-            </div> */}
-          </div>
-          </div>
-        </div>
-        <div className="aboutContent container">
-          <div className="row">
-            <div className="col-md-offset-1 col-md-6 col-sm-6">
-                <div className="aT2">
-                  Entertaining & Educating<br/>
+            <div className="col-md-offset-2 col-md-9">
+              <div className="col-md-8 gB">
+                <div className="col-md-3 gInfo gPercent">
+                  What
                 </div>
-                <span className="aT1">
-                  about divvy
-                </span>
-                <br/><br/>
-                <div className="aboutUs">
-                    <p>
-                    divvy is a platform to teach yourself money-managing skills that will help you be financially responsible.
-                    <br/><br/>
-                    This is more text to make it seem like this is a legitimate website with legitimate offerings to you, the user! Other words would go right here to really sell it to you.
-                  </p>
+                <div className="col-md-3 gInfo gTotal">
+                  the
                 </div>
+                <div className="col-md-3 gInfo gSaved">
+                  actual
+                </div>
+                <div className="col-md-3 gInfo gProgress" id="trash">
+                  fuck
+                </div>
+              </div>
+              </div>
             </div>
           </div>
         </div>

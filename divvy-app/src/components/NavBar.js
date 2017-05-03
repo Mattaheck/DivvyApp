@@ -1,7 +1,20 @@
 import React, {Component} from 'react';
 import {IndexLink, Link} from 'react-router';
+import LoginButton from './LoginButton';
+import LogoutButton from './LogoutButton';
 
 class NavBar extends Component {
+  sessionState(){
+  if (this.props.currentUser){
+    return(
+      <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+      <img className="nav-profile-pic" src={ this.props.currentUser.photoUrl } alt=""/> { this.props.currentUser.displayName }<span className="caret"></span>
+      </a>
+    )
+  } else {
+    return <LoginButton { ...this.props } className="link"> Login </LoginButton>
+  }
+}
   render() {
     return (
 
@@ -21,6 +34,7 @@ class NavBar extends Component {
               <li><Link to="/Goals" activeClassName="active" className="link">Goals</Link></li>
               <li><Link to="/AddGoals" activeClassName="active" className="link">Add a New Goal</Link></li>
               <li><Link to="/Profile" activeClassName="active" className="link">Profile</Link></li>
+              <li>{ this.sessionState() }</li>
             </ul>
           </nav>
         </div>

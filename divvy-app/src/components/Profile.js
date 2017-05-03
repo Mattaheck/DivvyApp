@@ -26,8 +26,13 @@ class Profile extends Component {
             </span>
           </div>
           <div className="col-md-offset-1 col-md-6 col-sm-3 rT">
-            <span className="avatar">
+            <span className="goals">
               <Goals />
+            </span>
+          </div>
+          <div className="col-md-offset-1 col-md-6 col-sm-3 rT">
+            <span className="progressBar">
+              <p>Goal Progress Bars here</p>
             </span>
           </div>
         </div>

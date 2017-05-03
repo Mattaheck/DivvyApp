@@ -33,5 +33,3 @@ const config = {
 
  export { firebase, database, auth };
  export { firebaseListToArray };
-
-export default firebase;

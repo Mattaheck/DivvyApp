@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
 import dotenv from 'dotenv';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router';
+
+
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import Home from './components/Home';
+import Profile from './components/Profile';
 import './App.css';
 import { firebase, auth } from './utils/firebase';
 
@@ -35,6 +43,20 @@ class App extends Component {
     auth.signInWithPopup(provider);
   }
 
+  handleLogin(e){
+  e.preventDefault();
+  console.log('Login button clicked');
+
+  const provider = new firebase.auth.GithubAuthProvider();
+  auth.signInWithPopup(provider);
+}
+
+handleLogout(e){
+  e.preventDefault();
+  console.log('Logout button clicked');
+  auth.signOut();
+}
+
 //   firebase.auth().signInWithPopup(provider).then(function(result) {
 //   // This gives you a Facebook Access Token. You can use it to access the Facebook API.
 //   var token = result.credential.accessToken;
@@ -52,7 +74,10 @@ class App extends Component {
 //   // ...
 // });
 
-
+// <div className="content">
+// currentUser= { this.state.currentUser }
+// loginButtonClicked={ this.loginButtonClicked }
+// logoutButtonClicked={ this.logoutButtonClicked } />
   logoutButtonClicked(e) {
     e.preventDefault();
 
@@ -62,14 +87,16 @@ class App extends Component {
 
   render() {
     return (
-
     <div className="App">
-      <NavBar />
+      <NavBar
+      handleLogout={ this.handleLogout }
+      handleLogin={ this.handleLogout }
+      currentUser={ this.state.currentUser }/>
       <div className="content">
-        {this.props.children}
+        { this.props.children }
       </div>
       <Footer />
-    </div>
+      </div>
     );
   }
 }

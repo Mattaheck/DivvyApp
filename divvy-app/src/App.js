@@ -39,17 +39,29 @@ class App extends Component {
   loginButtonClicked(e) {
     e.preventDefault();
 
-    const provider = new firebase.auth.FacebookAuthProvider();
-    auth.signInWithPopup(provider);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider).then(function(result){
+      var token = result.credential.accessToken;
+      var user = result.user;
+    }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      var email = error.email;
+      var credential = error.credential;
+
+    });
   }
 
   handleLogin(e){
-  e.preventDefault();
+  // e.preventDefault();
   console.log('Login button clicked');
-<<<<<<< HEAD
 
-  const provider = new firebase.auth.GithubAuthProvider();
-  auth.signInWithPopup(provider);
+  const provider = new firebase.auth.GoogleAuthProvider();
+  auth.signInWithPopup(provider).then(function(result){
+    console.log('Fuck yeah');
+  }).catch(function(error){
+    console.log('Error: ', error);
+  })
 }
 
 handleLogout(e){
@@ -58,40 +70,6 @@ handleLogout(e){
   auth.signOut();
 }
 
-=======
-
-  const provider = new firebase.auth.GithubAuthProvider();
-  auth.signInWithPopup(provider);
-}
-
-handleLogout(e){
-  e.preventDefault();
-  console.log('Logout button clicked');
-  auth.signOut();
-}
-
-//   firebase.auth().signInWithPopup(provider).then(function(result) {
-//   // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-//   var token = result.credential.accessToken;
-//   // The signed-in user info.
-//   var user = result.user;
-//   // ...
-// }).catch(function(error) {
-//   // Handle Errors here.
-//   var errorCode = error.code;
-//   var errorMessage = error.message;
-//   // The email of the user's account used.
-//   var email = error.email;
-//   // The firebase.auth.AuthCredential type that was used.
-//   var credential = error.credential;
-//   // ...
-// });
-
-// <div className="content">
-// currentUser= { this.state.currentUser }
-// loginButtonClicked={ this.loginButtonClicked }
-// logoutButtonClicked={ this.logoutButtonClicked } />
->>>>>>> mattheck_branch
   logoutButtonClicked(e) {
     e.preventDefault();
 
@@ -104,7 +82,7 @@ handleLogout(e){
     <div className="App">
       <NavBar
       handleLogout={ this.handleLogout }
-      handleLogin={ this.handleLogout }
+      handleLogin={ this.handleLogin }
       currentUser={ this.state.currentUser }/>
       <div className="content">
         { this.props.children }

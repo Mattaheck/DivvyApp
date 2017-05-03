@@ -35,7 +35,15 @@ class NavBar extends Component {
               <li><Link to="/Goals" activeClassName="active" className="link">Goals</Link></li>
               <li><Link to="/AddGoals" activeClassName="active" className="link">Add a New Goal</Link></li>
               <li><Link to="/Profile" activeClassName="active" className="link">Profile</Link></li>
-              <li>{ this.sessionState() }</li>
+              <div id="navbar" className="navbar-collapse collapse">
+                <ul className="nav navbar-nav navbar-right">
+                  <li className="dropdown">{ this.sessionState() }
+                <ul className="dropdown-menu">
+                    <li><LogoutButton { ...this.props }>Log Out</LogoutButton></li>
+                </ul>
+                  </li>
+                </ul>
+              </div>
             </ul>
           </nav>
         </div>

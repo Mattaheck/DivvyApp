@@ -38,7 +38,6 @@ class App extends Component {
 
   loginButtonClicked(e) {
     e.preventDefault();
-
     const provider = new firebase.auth.FacebookAuthProvider();
     auth.signInWithPopup(provider);
   }
@@ -68,7 +67,7 @@ class App extends Component {
     <div className="App">
       <NavBar
       handleLogout={ this.handleLogout }
-      handleLogin={ this.handleLogout }
+      handleLogin={ this.handleLogin }
       currentUser={ this.state.currentUser }/>
       <div className="content">
         { this.props.children }

@@ -15,6 +15,7 @@ class NavBar extends Component {
     return <LoginButton { ...this.props } className="link"> Login </LoginButton>
   }
 }
+
   render() {
     return (
 

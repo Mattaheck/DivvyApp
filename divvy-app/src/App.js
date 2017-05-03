@@ -1,34 +1,75 @@
 import React, {Component} from 'react';
-import {IndexLink} from 'react-router';
-import {Link} from 'react-router';
 import dotenv from 'dotenv';
-import './index.css';
-import firebase from './utils/firebase';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+import './App.css';
+import { firebase, auth } from './utils/firebase';
 
 
 dotenv.config({silent:true});
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      currentUser: null
+    }
+  }
+
+  componentWillMount() {
+    auth.onAuthStateChanged(currentUser => {
+      if (currentUser) {
+        console.log('Logged in:', currentUser);
+        this.setState({ currentUser });
+      } else {
+        this.setState({ currentUser: null });
+      }
+    });
+  }
+
+  loginButtonClicked(e) {
+    e.preventDefault();
+
+    const provider = new firebase.auth.FacebookAuthProvider();
+    auth.signInWithPopup(provider);
+  }
+
+//   firebase.auth().signInWithPopup(provider).then(function(result) {
+//   // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+//   var token = result.credential.accessToken;
+//   // The signed-in user info.
+//   var user = result.user;
+//   // ...
+// }).catch(function(error) {
+//   // Handle Errors here.
+//   var errorCode = error.code;
+//   var errorMessage = error.message;
+//   // The email of the user's account used.
+//   var email = error.email;
+//   // The firebase.auth.AuthCredential type that was used.
+//   var credential = error.credential;
+//   // ...
+// });
+
+
+  logoutButtonClicked(e) {
+    e.preventDefault();
+
+    auth.signOut();
+  }
+
+
   render() {
     return (
-      <div className="App">
-        <div className="container">
 
-          <header className="navbar">
-            <h1 className="pull-left">divvy</h1>
-          </header>
-
-          <nav className="tabs">
-            <li><IndexLink to="/" activeClassName="active" className="link">Home</IndexLink></li>
-            <li><Link to="/goals" activeClassName="active" className="link">Goals</Link></li>
-            <li><Link to="/AddGoals" activeClassName="active" className="link">Add a New Goal</Link></li>
-          </nav>
-          <div className="content">
-            {this.props.children}
-          </div>
-
-        </div>
+    <div className="App">
+      <NavBar />
+      <div className="content">
+        {this.props.children}
       </div>
+      <Footer />
+    </div>
     );
   }
 }

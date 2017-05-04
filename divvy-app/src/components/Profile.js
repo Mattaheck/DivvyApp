@@ -33,7 +33,8 @@ class Profile extends Component {
             </span>
           </div>
           <div className="col-md-offset-1 col-md-6 col-sm-3 rT">
-            <ProgressBar percent={20} />
+            <h3>Only 50%? Why can't you be better? Keep going!</h3>
+            <ProgressBar percent={50} />
           </div>
         </div>
         </div>

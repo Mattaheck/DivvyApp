@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Avatar from './Avatar';
 import Goals from './Goals';
-import './Profile.css';
+import ProgressBar from './ProgressBar';
+import '../css/Profile.css';
 
 class Profile extends Component {
   render(){
@@ -32,13 +33,7 @@ class Profile extends Component {
             </span>
           </div>
           <div className="col-md-offset-1 col-md-6 col-sm-3 rT">
-            <span className="progressBar">
-              <img src="http://piskel-imgstore-b.appspot.com/img/0a386ab3-3035-11e7-bb0e-13ef97b06e1a.gif" />
-              <h3>75% of the way there! Keep going!</h3>
-              <br/>
-              <img src="http://piskel-imgstore-b.appspot.com/img/0a386ab3-3035-11e7-bb0e-13ef97b06e1a.gif" />
-              <h3>90% of the way there!?! Astonishing!</h3>
-            </span>
+            <ProgressBar percent={20} />
           </div>
         </div>
         </div>

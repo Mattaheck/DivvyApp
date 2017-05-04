@@ -3,10 +3,26 @@ html, body {
     overflow-x: hidden;
 }
 
-a.link {
-  font-size: 2em;
-  color: rgb(0, 98, 148);
+div.container.navContainer {
+  margin-bottom: 0;
+}
+
+ul li a.link {
+  color: rgb(36,112,193);
   text-transform: uppercase;
+  text-align: center;
+  border: 1.5px solid rgb(36,112,193);
+  padding: 5px 5px 5px 9px;
+  margin: 15px;
+  font-weight: lighter;
+  letter-spacing: .5em;
+  font-size: 1em;
+  box-shadow: 3px 3px rgba(0,0,0,.3);
+  -o-transition:.2s;
+  -ms-transition:.2s;
+  -moz-transition:.2s;
+  -webkit-transition:.2s;
+  transition:.2s;
 }
 
 .navbar li {
@@ -16,7 +32,7 @@ a.link {
 
 .tabs li a.link {
   text-align: center;
-  border: 1.5px solid rgb(0,98,148);
+  border: 1.5px solid rgb(36,112,193);
   padding: 5px 5px 5px 9px;
   margin: 15px;
   font-weight: lighter;
@@ -58,13 +74,14 @@ h1 {
 }
 
 navbar-default, a.navbar-brand {
+  height: 100%;
   background-color: rgb(255,255,255) !important;
   font-family: 'Avenir', sans-serif;
   font-weight: bold;
   font-size: 2em;
   letter-spacing: .2em;
   color: rgb(255,145,150) !important;
-  border-right: 1px solid rgb(0,98,148);
+  border: 1px solid rgb(255,145,150);
   -o-transition:.2s;
   -ms-transition:.2s;
   -moz-transition:.2s;
@@ -74,6 +91,7 @@ navbar-default, a.navbar-brand {
 
 navbar-default, a.navbar-brand:hover {
   background-color: rgb(255,255,255) !important;
+  color: rgb(36,112,193) !important;
   box-shadow: 4px 5px rgba(0,0,0,.2);
 }
 
@@ -85,8 +103,38 @@ navbar-default, a.navbar-brand:hover {
   -moz-transition:.2s;
   -webkit-transition:.2s;
   transition:.2s;
+  margin-bottom: 0 !important;
 }
 
 .navbar:hover {
   box-shadow: 4px 4px rgba(0,0,0,.3);
+}
+
+
+nav.tabs.navbar.navbar-default.navbar-fixed-top>ul>li>a {
+margin-left: 15px;
+font-family: 'Avenir', sans-serif;
+background-color: rgb(255,255,255) !important;
+border: 1px solid rgb(36,112,193) !important;
+color: rgb(36,112,193);
+border-radius: 0 !important;
+text-align: center;
+text-transform: uppercase;
+padding: 5px 5px 5px 9px;
+font-weight: lighter;
+letter-spacing: .5em;
+font-size: 1em;
+box-shadow: 3px 3px rgba(0,0,0,.3);
+-o-transition:.2s;
+-ms-transition:.2s;
+-moz-transition:.2s;
+-webkit-transition:.2s;
+transition:.2s;
+}
+
+nav.tabs.navbar.navbar-default.navbar-fixed-top>ul>li>a:hover {
+  cursor: pointer;
+  color: rgb(255,145,150);
+  border: 1px solid rgb(255,145,150) !important;
+  box-shadow: 5px 5px rgba(0,0,0,.2);
 }

@@ -11,7 +11,7 @@ class Footer extends Component {
             <div className="col-md-3">
               <ul className="nav nav-pills nav-stacked">
                 <li><h4>Our Goal</h4></li>
-                <li><p>is to educate yound adults and adolescent abou financial responsibility in a fun and engaging way.</p></li>
+                <li><p>is to educate young adults and adolescents about financial responsibility in a fun and engaging way.</p></li>
               </ul>
             </div>
             <div className="col-md-3">

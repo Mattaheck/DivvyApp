@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import $ from 'jquery';
+import Calendar from './Calendar';
+import CurrencyInput from 'react-nebo15-currency-input';
 
 class AddGoals extends Component {
  render(){
@@ -7,34 +8,18 @@ class AddGoals extends Component {
      <body>
      <div>
        <h2>Add Goals content will go here</h2>
+       <CurrencyInput
+         className=""
+         type="text"
+         decimalSeparator="."
+         precision={2}
+         onChange={(value) => console.log('Change', value)}
+        />
 
-
-         <input name='amount' size='6' placeholder='0'/>Goal Price
-         <br/>
-         <form  class='sumtable'>
-         <input className='amount' size='6' placeholder='0'/>Starting Cash
-         <br/>
-         <p><input type="text" name="datepicker" id="datepicker"/> Date</p>
-
-         <p><button class="submit">submit</button></p>
-         <td>&nbsp;</td>
-         <br/>
-         <p>
-         <font face='Verdana' size='2'> New Total Needed: $
-         </font>
-         </p>
-         <br/>
-         <font face='Verdana' size='2'><span class='balance'>0</span></font>
-         <br/>
-         </form>
-
-         <p class="results">
-
-         </p>
-
-         <p class="finalResults">
-
-         </p>
+        <br/>
+        <Calendar/>
+        <br/>
+        <button className="" name="">submit</button>
        </div>
        </body>
 

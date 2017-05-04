@@ -30,30 +30,14 @@ ul li a.link {
   list-style: none;
 }
 
-.tabs li a.link {
-  text-align: center;
-  border: 1.5px solid rgb(36,112,193);
-  padding: 5px 5px 5px 9px;
-  margin: 15px;
-  font-weight: lighter;
-  letter-spacing: .5em;
-  font-size: 1em;
-  box-shadow: 3px 3px rgba(0,0,0,.3);
-  -o-transition:.2s;
-  -ms-transition:.2s;
-  -moz-transition:.2s;
-  -webkit-transition:.2s;
-  transition:.2s;
-}
-
-.tabs li a.link:hover {
+ul li a.link:hover {
   text-decoration: none;
   color: rgb(255,145,150);
   border: 1px solid rgb(255,145,150);
   box-shadow: 5px 5px rgba(0,0,0,.2);
 }
 
-.tabs li a.link:active {
+ul li a.link:active {
   text-decoration: none;
   color: rgb(255,145,150);
   border: 1px solid rgb(255,145,150);

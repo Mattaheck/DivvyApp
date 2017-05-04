@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import dotenv from 'dotenv';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import Home from './components/Home';
+import Profile from './components/Profile';
 import './App.css';
 import { firebase, auth } from './utils/firebase';
 
-dotenv.config({ silent:true });
+dotenv.config({silent:true});
 
 class App extends Component {
   constructor(props) {
@@ -19,14 +25,11 @@ class App extends Component {
 
   componentWillMount() {
     auth.onAuthStateChanged(currentUser => {
-    
       if (currentUser) {
-        console.log('Logged in:', currentUser.displayName );
-        this.setState({ currentUser: currentUser });
-        console.log(this.state.currentUser)
+        console.log('Logged in:', currentUser);
+        this.setState({ currentUser });
       } else {
         this.setState({ currentUser: null });
-
       }
     });
   }
@@ -35,25 +38,19 @@ class App extends Component {
   handleLogin(e){
   // e.preventDefault();
   console.log('Login button clicked');
+
   const provider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(provider).then(function(result){
-    console.log('Fuck yeah. Result: ', result);
-    var userId = firebase.auth().currentUser.uid;
-    firebase.database().ref('users/' + userId).on('value', function(snapshot){
-    console.log( userId );
-    });
-    }).catch(function(error){
-      console.log('Error: ', error);
-    })
-  }
+    console.log('Fuck yeah');
+  }).catch(function(error){
+    console.log('Error: ', error);
+  })
+}
 
 handleLogout(e){
   e.preventDefault();
   console.log('Logout button clicked');
-  auth.signOut().then(function(result){
-  }).catch(function(error){
-    console.log("ERROR OCCURRED: ", error);
-  })
+  auth.signOut();
 }
 
 
@@ -61,8 +58,8 @@ handleLogout(e){
     return (
     <div className="App">
       <NavBar
-      handleLogout={ this.handleLogout.bind(this) }
-      handleLogin={ this.handleLogin.bind(this) }
+      handleLogout={ this.handleLogout }
+      handleLogin={ this.handleLogin }
       currentUser={ this.state.currentUser }/>
       <div className="content">
         { this.props.children }

@@ -6,7 +6,7 @@ const avatars = [
   'http://piskel-imgstore-b.appspot.com/img/5d11a9b8-3075-11e7-8664-7378e3ca4582.gif',
   'http://piskel-imgstore-b.appspot.com/img/85627973-3075-11e7-b249-7378e3ca4582.gif',
   'http://piskel-imgstore-b.appspot.com/img/afb4e52b-3075-11e7-aea4-7378e3ca4582.gif',
-  'http://piskel-imgstore-b.appspot.com/img/05fc5a38-3075-11e7-9b60-7378e3ca4582.gif',
+  'http://piskel-imgstore-b.appspot.com/img/7c6fa007-30d9-11e7-b1d6-7378e3ca4582.gif',
 ];
 
 class Avatar extends Component {

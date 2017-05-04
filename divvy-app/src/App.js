@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Profile from './components/Profile';
 import './App.css';
-import { firebase, auth } from './utils/firebase';
+import { firebase, auth, database, firebaseListToArray } from './utils/firebase';
 
 dotenv.config({silent:true});
 
@@ -18,34 +18,41 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.stateg = {
-      currentUser: null
-    }
+    this.state = {
+      currentUser: ''
+    }; this.ref = database.ref('/goals')
   }
 
   componentWillMount() {
-    auth.onAuthStateChanged(currentUser => {
-      if (currentUser) {
-        console.log('Logged in:', currentUser);
-        this.setState({ currentUser });
-      } else {
-        this.setState({ currentUser: null });
-      }
+    database.ref('/users')
+    .on('value', data => {
+      const results = firebaseListToArray(data.val());
+      console.log('Users', results);
+
+      this.setState({ currentUser:results[0] });
+      console.log(this.state.currentUser.id)
+
     });
   }
 
 
-  handleLogin(e){
+handleLogin(e){
   // e.preventDefault();
   console.log('Login button clicked');
 
   const provider = new firebase.auth.GoogleAuthProvider();
   auth.signInWithPopup(provider).then(function(result){
-    console.log('Fuck yeah');
-  }).catch(function(error){
-    console.log('Error: ', error);
-  })
-}
+
+      console.log('Fuck yeah. Result: ', result);
+
+      database.ref('/user').push({
+        users: this.currentUser.displayName
+      })
+      }).catch(function(error){
+      console.log('Error: ', error);
+    })
+  }
+
 
 handleLogout(e){
   e.preventDefault();
@@ -62,7 +69,9 @@ handleLogout(e){
       handleLogin={ this.handleLogin }
       currentUser={ this.state.currentUser }/>
       <div className="content">
-        { this.props.children }
+        {this.props.children}
+        <p>Hello, {this.state.currentUser.id}</p>
+        {this.state.currentUser.goals}
       </div>
       <Footer />
       </div>

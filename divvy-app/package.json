@@ -6,8 +6,11 @@
     "dotenv": "^4.0.0",
     "firebase": "^3.9.0",
     "jquery": "^3.2.1",
+    "moment": "^2.18.1",
     "react": "^15.5.4",
+    "react-datepicker": "^0.46.0",
     "react-dom": "^15.5.4",
+    "react-nebo15-currency-input": "^0.1.6",
     "react-router": "^3.0.5"
   },
   "devDependencies": {

@@ -7,8 +7,6 @@ import {
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Home from './components/Home';
-import Profile from './components/Profile';
 import './App.css';
 import { firebase, auth, database, firebaseListToArray } from './utils/firebase';
 
@@ -19,25 +17,29 @@ class App extends Component {
     super(props);
 
     this.state = {
-      currentUser: ''
-    }; this.ref = database.ref('/goals')
+      currentUser: null
+    };
+    // this.ref = database.ref('/goals')
   }
 
   componentWillMount() {
-    database.ref('/users')
-    .on('value', data => {
-      const results = firebaseListToArray(data.val());
-      console.log('Users', results);
+    auth.onAuthStateChanged(currentUser => {
+      console.log('Auth State Changed', currentUser);
 
-      this.setState({ currentUser:results[0] });
-      console.log(this.state.currentUser.id)
-
-    });
+      if (currentUser){
+        this.setState({
+          currentUser: currentUser
+        })
+      } else {
+        this.setState({
+          currentUser: null
+        })
+      }
+    })
   }
 
-
 handleLogin(e){
-  // e.preventDefault();
+  e.preventDefault();
   console.log('Login button clicked');
 
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -70,8 +72,6 @@ handleLogout(e){
       currentUser={ this.state.currentUser }/>
       <div className="content">
         {this.props.children}
-        <p>Hello, {this.state.currentUser.id}</p>
-        {this.state.currentUser.goals}
       </div>
       <Footer />
       </div>

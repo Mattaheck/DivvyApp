@@ -5,7 +5,6 @@ import CurrencyInput from 'react-nebo15-currency-input';
 class AddGoals extends Component {
  render(){
    return(
-     <body>
      <div>
        <h2>Add Goals content will go here</h2>
        <CurrencyInput
@@ -20,8 +19,7 @@ class AddGoals extends Component {
         <Calendar/>
         <br/>
         <button className="" name="">submit</button>
-       </div>
-       </body>
+      </div>
 
    )
  }

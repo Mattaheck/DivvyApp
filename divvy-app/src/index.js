@@ -15,7 +15,7 @@ ReactDOM.render(
       <IndexRoute component={Home} />
       <Route path="Goals" component={Goals} />
       <Route path="AddGoals" component={AddGoals} />
-      <Route path="Profile" component={Profile} />
+      <Route path="/:profileId" component={ (props) => <Profile {...props} /> } />
     </Route>
     <Route path="*" component={NotFound} />
   </Router>),

@@ -1,30 +1,10 @@
 import React, { Component } from 'react';
+import Avatar from './Avatar';
 import Goals from './Goals';
-import Avatar from 'react-avatar';
-
+import './Profile.css';
 
 class Profile extends Component {
-  constructor(props){
-    super(props)
-
-    this.state={
-      avatars: [
-        'http://piskel-imgstore-b.appspot.com/img/d89a96eb-3027-11e7-92c5-13ef97b06e1a.gif',
-        'http://piskel-imgstore-b.appspot.com/img/aab9953d-3033-11e7-9568-13ef97b06e1a.gif'
-      ]
-    }
-  }
-
   render(){
-    const avatars = this.state.avatars.map((avatars) =>
-    return(
-        <div key={avatars.key} className="col-sm-6 col-md-4 col-lg-4">
-          <div className="card">
-
-          </div>
-        </div>
-      )
-    })
     return(
       <div className="profile container">
         <div className="profileContent container">
@@ -32,8 +12,9 @@ class Profile extends Component {
             <div className="col-md-offset-1 col-md-3 col-sm-3 lT">
             <span className="avatar">
               <div className="col-md-offset-2">
-              <Avatar src={avatars} size="130" />
-            </div>
+                <br/>
+                <Avatar />
+              </div>
               <br/>
             </span>
             <span className="userInfo">

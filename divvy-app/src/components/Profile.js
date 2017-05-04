@@ -81,4 +81,3 @@ class Profile extends Component {
 }
 
 export default Profile;
->>>>>>> ab8b41ddcb64278cd232975e4af5bc21e47bdf0b

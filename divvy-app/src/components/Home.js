@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Home.css';
-import {Link} from 'react-router';
+// import {Link} from 'react-router';
 
 class Home extends Component {
   render(){

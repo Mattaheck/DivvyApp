@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Avatar.css';
+import '../css/Avatar.css';
 
 const randomArrayElement = arr => arr[Math.floor(Math.random() * arr.length)];
 const avatars = [

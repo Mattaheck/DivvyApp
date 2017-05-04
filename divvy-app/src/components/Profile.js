@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Avatar from './Avatar';
 import Goals from './Goals';
+import ProgressBar from './ProgressBar';
 import { firebaseListToArray, database } from '../utils/firebase';
 
 class Profile extends Component {

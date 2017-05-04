@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { database, firebaseListToArray } from '../utils/firebase'
 import Goal from './Goal';
-import './Goals.css'
+import '../css/Goals.css'
 
 class Goals extends Component {
   constructor(props){

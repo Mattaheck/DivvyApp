@@ -1,95 +1,87 @@
 import React, { Component } from 'react';
-import Calendar from './Calendar';
-// import CurrencyInput from 'react-nebo15-currency-input';
+import { IndexLink, Link } from 'react-router';
 import CurrencyInput from 'react-currency-input';
-import DatePicker from 'react-datepicker';
 import moment from 'moment';
+import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-
-
 class AddGoals extends Component {
-  constructor(props){
-      super(props);
-      this.state = {
-        date: ["12/05/2009"],
-        startDate: moment(),
-        value: '',
-        dateDif: '',
-        currency: ''
-      }
-      this._addDate = this._addDate.bind(this);
-      this.handleChange = this.handleChange.bind(this);
-    }
-
-
-    _addDate(newDate){
-      let currentDate = this.state.date;
-      currentDate.push(newDate);
-      this.setState({date: currentDate});
-    }
-
-
-    _handleSubmit(e){
-
-      let newDate = this.refs.startDate.value;
-      this.props.addDate(newDate);
-      this.refs.startDate.value = '';
-
-    }
-
-
-    handleChange(date) {
-      this.setState({
-        newDate: date
-      });
-      
-    }
-
-    changeValue = (value, daysDif) => {
-      console.log('value is: ',value)
-      console.log('please work')
-      console.log(value/daysDif)
-
-
-    }
-
-    buttonSubmit(value, daysDif){
-      console.log("Button was clicked and value is ", this.changeValue)
-      console.log("date ",this.state.date)
-      console.log("startdate ",this.state.startDate)
-      console.log("value ",this.state.changeValue)
-      console.log("datedif  ",this.state.dateDif)
-      console.log(value/daysDif)
-    }
-
-
+  constructor (props) {
+    super(props)
+    this.state = {
+      startDate: moment(),
+      val: 0,
+    };
+    this.handleChange = this.handleChange.bind(this);
+    this.buttonSubmit = this.buttonSubmit.bind(this);
+  }
+  handleChange(date) {
+    this.setState({
+      startDate: date
+    });
+  }
+  changeValue = (val) => {
+    // console.log('value is: ',val)
+    // console.log('please work')
+    this.setState({
+      amount: val
+    })
+  }
+  buttonSubmit()  {
+    let numVal = this.state.amount.replace(/\$/g, '');
+    this.setState({
+      days: this.state.dateDif,
+      daily: ("$"+ (numVal/this.state.dateDif).toFixed(2))
+    })
+    // console.log("Button was clicked and value is ", this.changeValue)
+    // console.log("startDate",this.state.startDate)
+    console.log("goal cost is  ",this.state.amount)
+    console.log("number of days needed to save", this.state.dateDif)
+    console.log("amount needed per days is $" + (numVal/this.state.dateDif).toFixed(2))
+    // let days = `datedif  , this.state.dateDif `;
+    // let daily = "$" + (numVal/this.state.dateDif).toFixed(2))
+  }
+  // class SaveGoals extends Component {
+  //
+  // }
  render(){
-
    return(
-     <body>
      <div>
+      <div>
        <h2>Add Goals content will go here</h2>
-
-
-        $<CurrencyInput value={this.state.currency} onChange={this.changeValue}/>
-
+        How much will it cost?
         <br/>
-
-        <Calendar/>
-
-
+        <CurrencyInput
+        value={this.state.amount}
+        prefix={"$"}
+        onChange={this.changeValue}/>
         <br/>
-
-        <button className="" name="" onClick={this.buttonSubmit}>submit</button>
+        When do you want it by?
+        <br/>
+        <DatePicker
+          selected={this.state.startDate}
+          onChange={this.handleChange}
+          onSelect={
+            (value) => {
+              const dateDif = Math.round((new Date(value._d)-new Date())/(24*60*60*1000));
+              let goalDate = value._d;
+              console.log('Days Difference is ', dateDif)
+              console.log('Goal end date is ', goalDate)
+              this.setState({
+                dateDif: dateDif
+              });
+            }
+          }
+        />
+        <br/>
+        <button activeClassName="active" className="link" name="" onClick={this.buttonSubmit.bind(this)}>Get Results!</button>
        </div>
-       <div>
-         {this.addDate}
+       <div >
+        You have to save xx amount every day for xx days to reach your goal on xx!
+        <br/>
+        <button><Link to="/Goals" activeClassName="active" className="link">Save Goals!</Link></button>
        </div>
-
-    </body>
-
+     </div>
    )
  }
 }
-
 export default AddGoals;

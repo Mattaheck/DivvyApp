@@ -8,7 +8,7 @@ import {
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import './App.css';
-import { firebase, auth, database, firebaseListToArray } from './utils/firebase';
+import { firebase, auth } from './utils/firebase';
 
 dotenv.config({silent:true});
 

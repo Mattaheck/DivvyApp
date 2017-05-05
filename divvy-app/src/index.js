@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
-import Goals from './components/Goals';
 import Profile from './components/Profile';
 import AddGoals from './components/AddGoals';
 import Learn from './components/Learn';

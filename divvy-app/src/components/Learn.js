@@ -32,20 +32,12 @@ class Learn extends Component {
           </div>
           </div>
       <div className="learnText">
-        <iframe width="420" height="315"
-          src="https://www.youtube.com/embed/o4AgSmpCFIA">
-        </iframe>
-        <iframe width="420" height="315"
-        src="https://www.youtube.com/watch?v=K4XBGYFaXEs">
-        </iframe>
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/o4AgSmpCFIA" frameborder="0" allowfullscreen></iframe>
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/K4XBGYFaXEs" frameborder="0" allowfullscreen></iframe>
 
-        <iframe width="420" height="315"
-        src="https://www.youtube.com/watch?v=HfIERxQmZD4">
-        </iframe>
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/HfIERxQmZD4" frameborder="0" allowfullscreen></iframe>
 
-        <iframe width="420" height="315"
-        src="https://www.youtube.com/watch?v=TrrtLZqsTvQ">
-        </iframe>
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/TrrtLZqsTvQ" frameborder="0" allowfullscreen></iframe>
 
       </div>
       </div>

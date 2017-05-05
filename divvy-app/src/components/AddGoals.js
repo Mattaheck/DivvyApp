@@ -64,10 +64,11 @@ render(){
             <p className="howMuch">Create a New Goal</p>
             <br/>
             <CurrencyInput
-            value={this.state.amount}
-            prefix={"$"}
-            onChange={this.changeValue}
-            className="currencyInput"/>
+              value={this.state.amount}
+              prefix={"$"}
+              onChange={this.changeValue}
+              className="currencyInput"
+            />
             <br/>
             <br/>
             <DatePicker

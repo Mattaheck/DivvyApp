@@ -45,7 +45,7 @@ handleLogin(e){
   auth.signInWithPopup(provider).then(function(result){
 
       console.log('Fuck yeah. Result: ', result);
-      
+
       }).catch(function(error){
       console.log('Error: ', error);
     })

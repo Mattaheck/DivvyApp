@@ -13,6 +13,7 @@ class Avatar extends Component {
   render() {
     let randomUrl = randomArrayElement(avatars);
     return(
+<<<<<<< HEAD
       <div className="col-sm-12 col-md-12 col-lg-4">
         <div className="col-sm-12 col-md-6 avatarBox">
           <div className="avatarTitle">
@@ -21,6 +22,12 @@ class Avatar extends Component {
             <img src={randomUrl} className="avatarImage"/>
             <br/>
           </div>
+=======
+      <div className="col-sm-6 col-md-4 col-lg-4">
+        <div className="thisThing">
+          <h6>Avatar</h6>
+          <img alt="avatar image" src={randomUrl} />
+>>>>>>> SamK
         </div>
       </div>
     );

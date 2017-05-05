@@ -15,13 +15,13 @@ class NavBar extends Component {
   sessionState(){
   if (this.props.currentUser){
     return(
-      <LogoutButton { ...this.props } className="link" activeClassName="active"> Logout </LogoutButton>
+      <LogoutButton { ...this.props }  className="link" activeClassName="active"> Logout </LogoutButton>
     )
   } else {
     return <LoginButton { ...this.props } className="link" activeClassName="active"> Login </LoginButton>
   }
 }
-  navState(){
+  profileState(){
     if (this.props.currentUser){
       const link = "/"+this.props.currentUser.uid
       return (
@@ -46,9 +46,9 @@ class NavBar extends Component {
             <Link className="navbar-brand" to="/">divvy</Link>
             <ul>
               <li><IndexLink to="/" activeClassName="active" className="link">Home</IndexLink></li>
-              <li><Link to="/Goals" activeClassName="active" className="link">Goals</Link></li>
-              <li><Link to="/AddGoals" activeClassName="active" className="link">Add a New Goal</Link></li>
-              <li>{ this.navState() }</li>
+              <li><Link to="/Learn" activeClassName="active" className="link">Learn</Link></li>
+              <li><Link to="/AddGoals" activeClassName="active" className="link">Create a Goal</Link></li>
+              <li>{ this.profileState() }</li>
               <li>{ this.sessionState() }</li>
             </ul>
           </nav>

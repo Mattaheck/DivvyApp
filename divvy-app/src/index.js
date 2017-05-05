@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Goals from './components/Goals';
 import Profile from './components/Profile';
 import AddGoals from './components/AddGoals';
+import Learn from './components/Learn';
 import './index.css';
 import {Router, Route, hashHistory, IndexRoute} from 'react-router';
 
@@ -13,7 +14,7 @@ ReactDOM.render(
   (<Router history={hashHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
-      <Route path="Goals" component={Goals} />
+      <Route path="Learn" component={Learn} />
       <Route path="AddGoals" component={AddGoals} />
       <Route path="/:profileId" component={ (props) => <Profile {...props} /> } />
     </Route>

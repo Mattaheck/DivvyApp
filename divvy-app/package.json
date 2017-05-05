@@ -8,6 +8,7 @@
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "react": "^15.5.4",
+    "react-currency-input": "^1.2.6",
     "react-datepicker": "^0.46.0",
     "react-dom": "^15.5.4",
     "react-nebo15-currency-input": "^0.1.6",

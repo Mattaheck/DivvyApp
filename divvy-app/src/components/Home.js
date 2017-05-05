@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Home.css';
-// import {Link} from 'react-router';
+import {Link} from 'react-router';
 
 class Home extends Component {
   render(){
@@ -22,7 +22,7 @@ class Home extends Component {
         </div>
         <div className="blueContainer container">
           <div className="row">
-            <div className="col-md-offset-1 col-md-6 aT">
+            <div onClick={ this.props.handleSaveMoney } className="col-md-offset-1 col-md-6 aT">
               Save Your Money
             </div>
           <div className="row">
@@ -34,24 +34,30 @@ class Home extends Component {
           </div>
           <div className="row aboutRow">
             <div className="col-md-offset-2 col-md-9 aBCol">
-              <div className="col-md-4 aB">
-                CREATE A GOAL<br/>
-                <span className="aBLogo">
-                  +
-                </span>
-              </div>
-              <div className="col-md-4 aB">
+              <Link to="/AddGoals">
+                <div className="col-md-4 col-sm-12 aB">
+                  CREATE A GOAL<br/>
+                  <span className="aBLogo">
+                    +
+                  </span>
+                </div>
+              </Link>
+            <Link to="/AddGoals">
+              <div className="col-md-4 col-sm-1 aB">
                 SAVE DAILY<br/>
                 <span className="aBLogo">
                   $
                 </span>
               </div>
-              <div className="col-md-4 aB">
+            </Link>
+            <Link to="/AddGoals">
+              <div className="col-md-4 col-sm-12 aB">
                 WIN STARS<br/>
                 <span className="aBLogo">
                   ★
                 </span>
               </div>
+            </Link>
             </div>
           </div>
           <div className="row">

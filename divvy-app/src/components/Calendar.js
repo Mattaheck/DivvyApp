@@ -1,13 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-// CSS Modules, react-datepicker-cssmodules.css
-// import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
-class Calendar extends React.Component {
+class Calendar extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -16,17 +14,26 @@ class Calendar extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  _handleSubmit(e){
+
+    let newDate = this.refs.startDate.value;
+    this.props.addDate(newDate);
+    this.refs.startDate.value = '';
+
+  }
+
   handleChange(date) {
     this.setState({
       startDate: date
     });
   }
 
+
   render() {
     return <DatePicker
         selected={this.state.startDate}
         onChange={this.handleChange}
-        onChange={(value) => console.log('Change', (value))}
+        onChange={(value) => console.log('Days Difference is ',(Math.round((new Date(value._d)-new Date())/(24*60*60*1000))))}
     />;
   }
 }

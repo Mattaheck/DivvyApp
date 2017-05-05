@@ -19,7 +19,6 @@ class App extends Component {
     this.state = {
       currentUser: null
     };
-    // this.ref = database.ref('/goals')
   }
 
   componentWillMount() {
@@ -46,10 +45,7 @@ handleLogin(e){
   auth.signInWithPopup(provider).then(function(result){
 
       console.log('Fuck yeah. Result: ', result);
-
-      database.ref('/user').push({
-        users: this.currentUser.displayName
-      })
+      
       }).catch(function(error){
       console.log('Error: ', error);
     })

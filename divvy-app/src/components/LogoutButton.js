@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { IndexLink, Link } from 'react-router';
 
 class LogoutButton extends Component {
   render() {
     return (
-      <a onClick={ this.props.handleLogout } href="#">{ this.props.children }</a>
+      <IndexLink to="/" onClick={ this.props.handleLogout }>{ this.props.children }</IndexLink>
     )
   }
 }

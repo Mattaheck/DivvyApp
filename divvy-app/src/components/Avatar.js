@@ -16,7 +16,7 @@ class Avatar extends Component {
       <div className="col-sm-6 col-md-4 col-lg-4">
         <div className="thisThing">
           <h6>Avatar</h6>
-          <img src={randomUrl} />
+          <img alt="avatar image" src={randomUrl} />
         </div>
       </div>
     );

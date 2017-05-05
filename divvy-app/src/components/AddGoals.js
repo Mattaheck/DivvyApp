@@ -4,6 +4,7 @@ import CurrencyInput from 'react-currency-input';
 import moment from 'moment';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+
 class AddGoals extends Component {
   constructor (props) {
     super(props)

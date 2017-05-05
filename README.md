@@ -15,3 +15,21 @@ Git Workflow
 6. Run `git merge [your_branch_name]` to merge your branch name into `dev`
 7. Fix any merge conflicts
 8. Do `git push origin dev` to push the new `dev` branch up
+
+------------------------------------------------------------------------------------------
+
+Include sections for:
+
+Project Description:
+ - divvy is a simple savings app that aims to educate teens and young adults about the importance of saving money in a fun, and easy to understand, way.
+
+
+Technologies Used
+ - divvy was built using react, bootstrap, firebase, piskelapp.com (for the avatars) 
+
+User Stories
+- As a teen, I want to learn how to save money so that I can be financially stable when I get older.
+
+
+Wireframes
+- 
